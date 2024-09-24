@@ -262,6 +262,18 @@ export class StreamClientScrcpy
     };
 
     public startStream({ udid, player, playerName, videoSettings, fitToScreen }: StartParams): void {
+        if (!player && !videoSettings) {
+            fitToScreen = true;
+            videoSettings = new VideoSettings({
+                bitrate: 8388608,
+                maxFps: 24,
+                iFrameInterval: 5,
+                sendFrameMeta: false,
+                lockedVideoOrientation: -1,
+                displayId: 0,
+            });
+        }
+
         if (!udid) {
             throw Error(`Invalid udid value: "${udid}"`);
         }
