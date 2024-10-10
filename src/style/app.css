@@ -71,14 +71,17 @@ body {
     height: 100%;
     width: 100%;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
 
 body.shell {
     background-color: var(--shell-bg-color);
 }
 
 body.stream {
+    text-align: center;
     background-color: var(--stream-bg-color);
 }
 
@@ -103,32 +106,43 @@ body.stream {
 
 .device-view {
     z-index: 1;
-    /* float: right; */
     display: inline-block;
+    position: relative;
+    height: 100%;
+    width: 100%;
 }
 
 .video-layer {
     position: absolute;
     z-index: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 100%;
 }
 
 .touch-layer {
     position: absolute;
     z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .video {
-    float: right;
     max-height: 100%;
     max-width: 100%;
     background-color: #000000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-
 
 .control-buttons-list {
     float: right;
     width: 3.715rem;
     background-color: var(--control-buttons-bg-color);
+    display: none;
 }
 
 .control-button {
