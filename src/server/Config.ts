@@ -5,7 +5,7 @@ import { Configuration, HostItem, ServerItem } from '../types/Configuration';
 import { EnvName } from './EnvName';
 import YAML from 'yaml';
 
-const DEFAULT_PORT = 6173;
+const DEFAULT_PORT = 9745;
 
 const YAML_RE = /^.+\.(yaml|yml)$/i;
 const JSON_RE = /^.+\.(json|js)$/i;
